@@ -23,11 +23,11 @@ module "ecs-fargate" {
 
   cluster_id = aws_ecs_cluster.cluster.id
 
-  task_container_image   = "ubuntu"
-  task_definition_cpu    = 256
-  task_definition_memory = 512
+  task_container_image   = "mayukh001/flaskapp:latest"
+  task_definition_cpu    = 2048
+  task_definition_memory = 4096
 
-  task_container_port             = 80
+  task_container_port             = 5000
   task_container_assign_public_ip = true
 
   load_balanced = false
