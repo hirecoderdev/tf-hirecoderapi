@@ -23,7 +23,8 @@ module "ecs-fargate" {
 
   cluster_id = aws_ecs_cluster.cluster.id
 
-  task_container_image   = "mayukh001/flaskapp:latest"
+  # task_container_image   = "mayukh001/flaskapp:latest"
+  task_container_image   = "331689678630.dkr.ecr.us-east-1.amazonaws.com/hirecoderapi:latest"
   task_definition_cpu    = 2048
   task_definition_memory = 4096
 
@@ -41,7 +42,7 @@ module "ecs-fargate" {
 
   health_check = {
     port = "traffic-port"
-    path = "/"
+    path = "/api/docs"
   }
 
   tags = {

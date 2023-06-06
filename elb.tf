@@ -17,12 +17,12 @@ resource "aws_lb" "hirecoder"{
   }
 }
 resource "aws_lb_target_group" "Hirecoder_target_group" {
-  name     = "hirecoder-tg"
+  name     = "hirecoder-stage-tg"
   port     = 80
   protocol = "HTTP"
   vpc_id   = aws_vpc.ecs_vpc.id
 
   health_check {
-    path = "/health"
+    path = "/api/docs"
   }
 }
